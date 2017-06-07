@@ -857,19 +857,19 @@ NSUInteger const INSEPGLayoutMinBackgroundZ = 0.0;
     if (self.cachedEarliestDate) {
         return self.cachedEarliestDate;
     }
-    NSDate *earliestDate = nil;
     
-    if ([self.dataSource respondsToSelector:@selector(collectionView:startTimeForLayout:)]) {
-        earliestDate = [self.dataSource collectionView:self.collectionView startTimeForLayout:self];
-    } else {
-        for (NSInteger section = 0; section < self.collectionView.numberOfSections; section++) {
-            NSDate *earliestDateForSection = [self earliestDateForSection:section];
-            if ((earliestDateForSection && [earliestDateForSection ins_isEarlierThan:earliestDate]) || !earliestDate) {
-                earliestDate = earliestDateForSection;
-            }
-        }
-    }
-
+    NSDate *today = [NSDate date];
+    // Get the year, month, day from the date
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:today];
+        
+    // Set the hour, minute, second to be zero
+    components.hour = 0;
+    components.minute = 0;
+    components.second = 0;
+    
+    // Create the date
+    NSDate *earliestDate = [[NSCalendar currentCalendar] dateFromComponents:components];
+    
     if (earliestDate) {
         self.cachedEarliestDate = earliestDate;
         return self.cachedEarliestDate;
@@ -911,19 +911,19 @@ NSUInteger const INSEPGLayoutMinBackgroundZ = 0.0;
     if (self.cachedLatestDate) {
         return self.cachedLatestDate;
     }
-    NSDate *latestDate = nil;
-
-    if ([self.dataSource respondsToSelector:@selector(collectionView:endTimeForlayout:)]) {
-        latestDate = [self.dataSource collectionView:self.collectionView endTimeForlayout:self];
-    } else {
-        for (NSInteger section = 0; section < self.collectionView.numberOfSections; section++) {
-            NSDate *latestDateForSection = [self latestDateForSection:section];
-            if ((latestDateForSection && [latestDateForSection ins_isLaterThan:latestDate]) || !latestDate) {
-                latestDate = latestDateForSection;
-            }
-        }
-    }
-
+    
+    NSDate *today = [NSDate date];
+    // Get the year, month, day from the date
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:today];
+    
+    // Set the hour, minute, second to be zero
+    components.hour = 24;
+    components.minute = 0;
+    components.second = 0;
+    
+    // Create the date
+    NSDate *latestDate = [[NSCalendar currentCalendar] dateFromComponents:components];
+    
     if (latestDate) {
         self.cachedLatestDate = latestDate;
         return self.cachedLatestDate;
@@ -990,6 +990,7 @@ NSUInteger const INSEPGLayoutMinBackgroundZ = 0.0;
     return date;
 }
 
+// TODO: set current date from APP
 - (NSDate *)currentDate
 {
     if (self.cachedCurrentDate) {

@@ -1,79 +1,14 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7mt-aS-Czd">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mzG-qZ-YFB">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Electronic Program Guide-->
-        <scene sceneID="G0Z-jT-w2f">
-            <objects>
-                <collectionViewController id="Xgr-Jz-TKT" customClass="INSFloatingHeadersEPGViewController" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="TTV-eQ-PRO">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="u0z-Po-zey" customClass="INSElectronicProgramGuideLayout">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells/>
-                        <connections>
-                            <outlet property="dataSource" destination="Xgr-Jz-TKT" id="4T1-QP-Vmc"/>
-                            <outlet property="delegate" destination="Xgr-Jz-TKT" id="3hm-9O-0dO"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" title="Electronic Program Guide" id="OXR-5z-Bly"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wuf-vG-8FE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1819" y="251"/>
-        </scene>
-        <!--Floating Cells-->
-        <scene sceneID="gF7-fe-mte">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lIT-MF-0Kf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Floating Cells" image="activity" id="Ub3-vu-6B7"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Iya-PC-77y">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Xgr-Jz-TKT" kind="relationship" relationship="rootViewController" id="DR8-wX-dyr"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4oO-Aq-AbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1007" y="251"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="61Z-DC-T1o">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="7mt-aS-Czd" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="BQc-gL-iXy">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="lIT-MF-0Kf" kind="relationship" relationship="viewControllers" id="qGO-HB-xM1"/>
-                        <segue destination="mzG-qZ-YFB" kind="relationship" relationship="viewControllers" id="ELA-DF-ajO"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1F2-sV-uys" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="195" y="251"/>
-        </scene>
         <!--Normal Cells-->
         <scene sceneID="X7t-MN-FhH">
             <objects>
@@ -83,9 +18,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WF5-TO-s0h">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -101,10 +36,10 @@
         <scene sceneID="qQ8-gw-WW8">
             <objects>
                 <collectionViewController id="mgu-PK-Kba" customClass="INSEPGViewController" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="4S4-Ys-5tg">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="4S4-Ys-5tg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fSI-Xw-Rbg" customClass="INSElectronicProgramGuideLayout">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -125,7 +60,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="activity" width="15" height="19"/>
         <image name="explore" width="60" height="44"/>
     </resources>
 </document>
